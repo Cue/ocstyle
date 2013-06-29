@@ -61,6 +61,13 @@ Note the inclusion of the `;` and the `{` being on the next line. We like this s
 and paste from `.h` to `.m` and back, but maybe you have your own preferences.  We'd be very happy to accept pull
 requests that make ocstyle more configurable.
 
+For the motivated pull requesters out there, other notable TODOs include:
+
+* Allow inline disabling of specific errors.
+
+* Fix various whitespace false negatives noted in test files
+
+
 # License
 
 Apache License version 2.0
