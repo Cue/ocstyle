@@ -83,7 +83,7 @@ Other linters and style checkers we use at Cue include:
 
 * JavaScript: [Closure linter](https://developers.google.com/closure/utilities/)
 
-* Python: [pylint][http://www.logilab.org/857]
+* Python: [pylint](http://www.logilab.org/857)
 
 
 # License
