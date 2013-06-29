@@ -81,7 +81,7 @@ Other linters and style checkers we use at Cue include:
 
 * Java: [checkstyle](http://checkstyle.sourceforge.net/)
 
-* JavaScript: [Closure linter](https://developers.google.com/closure/utilities/)
+* JavaScript: [Closure Linter](https://developers.google.com/closure/utilities/)
 
 * Python: [pylint](http://www.logilab.org/857)
 
