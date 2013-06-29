@@ -9,6 +9,8 @@ pip install ocstyle
 
 # Example
 
+If you have a file called `test.m` like this:
+
 ```objc
 +(void) someMessage:(NSString*)subdomain {
     NSString *ShouldStartLowerCase;
@@ -16,8 +18,10 @@ pip install ocstyle
 }
 ```
 
+You can check style in it like this:
+
 ```
-$ oclint test.m
+$ ocstyle test.m
 test.m
 ERROR: 1:1 [1] - MissingSpace - Expected 1, got 0
 ERROR: 1:8 [8] - ExtraSpace - Did not expect ' ' here
@@ -31,6 +35,10 @@ ERROR: 2:35 [77] - BadLocalVariableName - Local variable must start with a lower
 
 Make it easy to share and enforce style rules for Objective C.  The less human time we spend thinking about whitespace
 and naming the better!  Also enforces the existence of basic documentation.
+
+At [Cue](http://www.cueup.com) we use this as a
+[git pre-commit hook](http://git-scm.com/book/en/Customizing-Git-Git-Hooks).
+This way we ensure everyone maintains a consistent coding style with a minimum of effort.
 
 # Related
 
