@@ -68,6 +68,22 @@ For the motivated pull requesters out there, other notable TODOs include:
 * Fix various whitespace false negatives noted in test files
 
 
+# Links
+
+ocstyle is built using [parcon](http://www.opengroove.org/parcon/parcon-tutorial.html), a really nice parser
+generator library for Python.
+
+Other linters and style checkers we use at Cue include:
+
+* Objective C: [OCLint](http://oclint.org/)
+
+* Java: [checkstyle](http://checkstyle.sourceforge.net/)
+
+* JavaScript: [Closure linter](https://developers.google.com/closure/utilities/)
+
+* Python: [pylint][http://www.logilab.org/857]
+
+
 # License
 
 Apache License version 2.0
