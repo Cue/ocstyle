@@ -5,7 +5,9 @@ Objective-C style checker
 
 # Installation
 
+```
 pip install ocstyle
+```
 
 # Example
 
