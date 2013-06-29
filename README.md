@@ -30,7 +30,7 @@ ERROR: 2:35 [77] - BadLocalVariableName - Local variable must start with a lower
 # Goal
 
 Make it easy to share and enforce style rules for Objective C.  The less human time we spend thinking about whitespace
-and naming the better!  Also enforces the existence of basic docs.
+and naming the better!  Also enforces the existence of basic documentation.
 
 # Related
 
@@ -38,8 +38,10 @@ and naming the better!  Also enforces the existence of basic docs.
 
 # Status
 
-This is a pretty early stage project.  We fully expect bugs and feature requests.  One notable absence is that right
-now style rules are not configurable.  For example, we use the following style for messages in `.m` files:
+This is a pretty early stage project.  We fully expect bugs and feature requests!
+
+One notable absence is that right now style rules are not configurable.  For example, we use the following style
+for message implementations:
 
 ```objc
 +(void) someMessage:(NSString*)subdomain;
