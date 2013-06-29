@@ -83,7 +83,9 @@ Other linters and style checkers we use at Cue include:
 
 * JavaScript: [Closure Linter](https://developers.google.com/closure/utilities/)
 
-* Python: [pylint](http://www.logilab.org/857)
+* Python: [pylint](http://www.logilab.org/857) and [pep8](http://www.python.org/dev/peps/pep-0008/)
+
+* All: [IntelliJ](http://www.jetbrains.com/idea/) has great code inspections in the editor
 
 
 # License
