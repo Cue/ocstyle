@@ -16,7 +16,8 @@ pip install ocstyle
 }
 ```
 
-```$ oclint test.m
+```
+$ oclint test.m
 test.m
 ERROR: 1:1 [1] - MissingSpace - Expected 1, got 0
 ERROR: 1:8 [8] - ExtraSpace - Did not expect ' ' here
