@@ -14,23 +14,44 @@ pip install ocstyle
 If you have a file called `test.m` like this:
 
 ```objc
+@implementation SomeClass
+
 +(void) someMessage:(NSString*)subdomain {
     NSString *ShouldStartLowerCase;
     // ...
 }
+
+@end
 ```
 
-You can check style in it like this:
+and `test.h` like this:
 
 ```
-$ ocstyle test.m
+@interface SomeClass
+
++ (void)someMessage:(NSString*)subdomain;
+
+@property NSInteger value;
+
+@end
+```
+
+You can check style like this:
+
+```
+$ ocstyle test.*
+test.h
+ERROR: 0:-97 [0] - ExpectedInterfaceDocInHeader - Interface requires /** documentation */
+ERROR: 3:30 [51] - MissingSpace - Expected 1, got 0
+ERROR: 5:1 [65] - ExpectedPropertyDocInHeader - Property requires /** documentation */
+
 test.m
-ERROR: 1:1 [1] - MissingSpace - Expected 1, got 0
-ERROR: 1:8 [8] - ExtraSpace - Did not expect ' ' here
-ERROR: 1:29 [29] - MissingSpace - Expected 1, got 0
-ERROR: 1:41 [41] - MissingNewline - Should have newline after ;
-ERROR: 1:41 [41] - MissingSemicolon - Expected a semicolon
-ERROR: 2:35 [77] - BadLocalVariableName - Local variable must start with a lower case letter
+ERROR: 3:2 [28] - MissingSpace - Expected 1, got 0
+ERROR: 3:9 [35] - ExtraSpace - Did not expect ' ' here
+ERROR: 3:30 [56] - MissingSpace - Expected 1, got 0
+ERROR: 3:42 [68] - MissingNewline - Should have newline after ;
+ERROR: 3:42 [68] - MissingSemicolon - Expected a semicolon
+ERROR: 4:35 [104] - BadLocalVariableName - Local variable must start with a lower case letter```
 ```
 
 # Goal
