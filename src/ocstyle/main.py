@@ -15,6 +15,7 @@
 
 """Basic Objective C style checker."""
 
+import argparse
 import os.path
 import sys
 
@@ -23,16 +24,16 @@ import parcon
 from ocstyle import rules
 
 
-def check(path):
+def check(path, maxLineLength):
   """Style checks the given path."""
   with open(path) as f:
-    return checkFile(path, f)
+    return checkFile(path, f, maxLineLength)
 
 
-def checkFile(path, f):
+def checkFile(path, f, maxLineLength):
   """Style checks the given file object."""
   content = f.read()
-  lineErrors = rules.setupLines(content)
+  lineErrors = rules.setupLines(content, maxLineLength)
   result = parcon.Exact(rules.entireFile).parse_string(content)
   if path.endswith(('.m', '.mm')):
     result = [err for err in result if not isinstance(err, rules.Error) or not err.kind.endswith('InHeader')]
@@ -43,10 +44,15 @@ def checkFile(path, f):
 
 def main():
   """Main body of the script."""
-  for filename in sys.argv[1:]:
+
+  parser = argparse.ArgumentParser()
+  parser.add_argument("--maxLineLength", action="store", type=int, default=120, help="Maximum line length")
+  args, filenames = parser.parse_known_args()
+
+  for filename in filenames:
     if not os.path.isdir(filename):
       print filename
-      for part in check(filename):
+      for part in check(filename, args.maxLineLength):
         if isinstance(part, rules.Error):
           print 'ERROR: %s' % part
         else:
