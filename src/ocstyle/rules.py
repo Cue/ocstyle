@@ -30,14 +30,12 @@ VERBOSE = True
 
 TAB_SIZE = 4
 
-MAX_LINE_LENGTH = 120
-
 LINES = []
 
 # PyLint has a very hard time with our decorator pattern.  # pylint: disable=E1120
 
 
-def setupLines(content):
+def setupLines(content, maxLineLength):
   """Setup line position data."""
   LINES[:] = []
   pos = -1
@@ -51,7 +49,7 @@ def setupLines(content):
   errors = []
   for lineNo in range(1, len(LINES)):
     lineLength = LINES[lineNo] - LINES[lineNo - 1] - 1 # Remove the \n character.
-    if lineLength > MAX_LINE_LENGTH:
+    if lineLength > maxLineLength:
       errors.append(Error(
         'LineTooLong', 'Line too long: %d chars over the %d limit' % (lineLength, MAX_LINE_LENGTH),
         LINES[lineNo], LINES))
