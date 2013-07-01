@@ -22,7 +22,7 @@ except ImportError:
 
 
 setup(name='ocstyle',
-      version='0.1',
+      version='0.1.1',
       description='Objective-C style checker',
       author='Cue Technologies, Inc.',
       url='https://www.github.com/Cue/ocstyle',
@@ -33,7 +33,7 @@ setup(name='ocstyle',
       install_requires=[
         'parcon==0.1.25'
       ],
-      entry_points = {
+      entry_points={
         'console_scripts': [
           'ocstyle = ocstyle.main:main'
         ]

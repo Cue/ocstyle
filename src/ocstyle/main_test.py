@@ -71,7 +71,7 @@ class StyleCheckerTest(unittest.TestCase):
       errors = []
       badParse = []
       with pkg_resources.resource_stream('ocstyle', os.path.join('testdata', filename)) as f:
-        result = main.checkFile(filename, f)
+        result = main.checkFile(filename, f, 120)
       for part in result:
         if isinstance(part, basestring):
           badParse.append(part)

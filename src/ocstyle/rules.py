@@ -51,7 +51,7 @@ def setupLines(content, maxLineLength):
     lineLength = LINES[lineNo] - LINES[lineNo - 1] - 1 # Remove the \n character.
     if lineLength > maxLineLength:
       errors.append(Error(
-        'LineTooLong', 'Line too long: %d chars over the %d limit' % (lineLength, MAX_LINE_LENGTH),
+        'LineTooLong', 'Line too long: %d chars over the %d limit' % (lineLength, maxLineLength),
         LINES[lineNo], LINES))
   return errors
 
